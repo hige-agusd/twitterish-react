@@ -1,0 +1,57 @@
+$backgroundColor: #000;
+$secondaryBackgroundColor: #666;
+$accentColor: orangered;
+$textColor: #fff;
+$headerHeight-sm: 50px;
+
+body {
+    margin: 0;
+}
+.main-content {
+    background: $secondaryBackgroundColor;
+    overflow-x: hidden;
+    padding-top: calc(#{$headerHeight-sm} + 20px);
+    width: 100%;
+}
+
+.Header {
+    align-items: center;
+    background: $backgroundColor;
+    border-bottom: 2px solid $accentColor;
+    color: $textColor;
+    display: flex;
+    flex-direction: row;
+    height: $headerHeight-sm;
+    justify-content: space-between;
+    padding: 0 25px;
+    position: fixed;
+    top: 0;
+    width: calc(100% - 50px);
+    & > a {
+        color: $textColor;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+        &.active {
+            color: $accentColor;
+        }
+    }
+}
+
+.Tweetlist {
+    display: grid;
+    grid-template: auto / 260px;
+    grid-gap: 15px;
+    margin: 0 auto;
+    padding: 0;
+    // padding-top: 20px;
+    width: 260px;
+}
+
+.TweetEntry {
+    background: $backgroundColor;
+    border: 1px solid $accentColor;
+    border-radius: 5px;
+    list-style: none;
+    height: 200px;;
+}

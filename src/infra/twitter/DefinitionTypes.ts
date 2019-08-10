@@ -275,6 +275,8 @@ export type GetTweetQueryVariables = {
     likesLast?: Maybe<Scalars["Int"]>;
 };
 
+export type CreateTweetMutation = {};
+
 export type GetTweetQuery = { readonly __typename?: "Query" } & {
     readonly getTweet: Maybe<
         { readonly __typename?: "Tweet" } & {

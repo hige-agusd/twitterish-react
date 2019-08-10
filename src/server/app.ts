@@ -5,14 +5,23 @@ import graphqlHTTP from "express-graphql";
 
 import { schema } from "../infra/twitter/schema";
 
+var sassMiddleware = require("node-sass-middleware");
+
+
 const port = process.env.APP_PORT || 3033;
 const app = express();
 
+app.use(sassMiddleware({
+    src: path.join(__dirname, "..", "styles"),
+    dest: '/tmp'
+}));
+  
 app.use(
     express.static(path.join(__dirname, "..", "..", "public"), {
         extensions: ["html", "svg"]
     })
 );
+app.use(express.static('/tmp'));
 
 app.use(
     "/graphql",
