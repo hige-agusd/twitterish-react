@@ -60,7 +60,7 @@ export const mocks = {
     Query: () => ({
         getTweet: (_, vars) => {
             return tweets.find(t => t.id === vars.id);
-        }
+        },
     }),
     Mutation: () => ({
         tweet: (_, vars) => {

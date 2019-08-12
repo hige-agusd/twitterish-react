@@ -100,6 +100,8 @@ export type Query = {
     __typename?: "Query";
     readonly getTweets?: Maybe<TweetConnection>;
     readonly getTweet?: Maybe<Tweet>;
+    readonly getUser?: Maybe<User>;
+    readonly getUsers?: Maybe<ReadonlyArray<Maybe<User>>>;
 };
 
 export type QueryGetTweetsArgs = {
@@ -111,6 +113,10 @@ export type QueryGetTweetsArgs = {
 
 export type QueryGetTweetArgs = {
     id: Scalars["ID"];
+};
+
+export type QueryGetUserArgs = {
+    twitterId: Scalars["String"];
 };
 
 export type Retweet = Node & {
@@ -275,8 +281,6 @@ export type GetTweetQueryVariables = {
     likesLast?: Maybe<Scalars["Int"]>;
 };
 
-export type CreateTweetMutation = {};
-
 export type GetTweetQuery = { readonly __typename?: "Query" } & {
     readonly getTweet: Maybe<
         { readonly __typename?: "Tweet" } & {
@@ -304,5 +308,21 @@ export type GetTweetsQueryVariables = {
 export type GetTweetsQuery = { readonly __typename?: "Query" } & {
     readonly getTweets: Maybe<
         { readonly __typename?: "TweetConnection" } & TweetConnectionFragment
+    >;
+};
+
+export type GetUserQueryVariables = {
+    twitterId: Scalars["String"];
+};
+
+export type GetUserQuery = { readonly __typename?: "Query" } & {
+    readonly getUser: Maybe<
+        { readonly __typename?: "User" } & UserFragment
+    >;
+};
+
+export type GetUsersQuery = { readonly __typename?: "Query" } & {
+    readonly getUsers: Maybe<
+        ReadonlyArray<Maybe<{ readonly __typename?: "User" } & UserFragment>>
     >;
 };

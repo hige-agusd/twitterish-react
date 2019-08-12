@@ -12,6 +12,8 @@ type Mutation {
 type Query {
   getTweets(before: String, after: String, first: Int, last: Int): TweetConnection
   getTweet(id: ID!): Tweet
+  getUser(twitterId: String!): User
+  getUsers: [User]
 }
 
 scalar DateTime

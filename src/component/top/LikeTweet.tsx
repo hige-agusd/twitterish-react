@@ -13,12 +13,12 @@ export const LikeTweet: React.SFC<Props> = props => {
             tweetId: id,
             // tweet: tweet
         };
-        await likeTweet(variables);
+        console.log(await likeTweet(variables));
     }
     
     return (
         <div className={'Like'} onClick={() => like(props.tweetId)}>
-            <div className={'Like__btn'}>Like</div>
+            <div className={'Like__btn'}></div>
             <div className={'Like__count'}>{props.likeCount}</div>
         </div>
     );

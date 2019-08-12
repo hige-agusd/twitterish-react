@@ -30,12 +30,13 @@ export function mapConnectionTo(
 }
 
 export function mapTo(tweet: TweetFragment): Tweet {
-    const { id, body, tweetedAt, creatorId, retweetCount, likeCount } = tweet;
+    const { id, body, tweetedAt, creatorId, retweetCount, likeCount, creator } = tweet;
     return {
         id,
         body,
         tweetedAt: new Date(tweetedAt),
         creatorId,
+        creator,
         retweetCount,
         likeCount
     };

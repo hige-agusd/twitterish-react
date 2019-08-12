@@ -20,10 +20,9 @@ export function likeTweet(
             variables
         })
         .then(json => {
-            if (!(json.data && json.data.tweet)) {
+            if (!(json.data && json.data.likeTweet)) {
                 throw new Error(`Failed to get tweets.`);
             }
-            return json.data.tweet;
-            // return mapTo(json.data.tweet);
+            return json.data;
         });
 }

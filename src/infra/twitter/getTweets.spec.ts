@@ -3,7 +3,7 @@ import test from "ava";
 import { mockGraphQLClient } from "./mockGraphQLClient";
 import { getTweets } from "./getTweets";
 
-test("Should get tweests.", async t => {
+test("Should get tweets.", async t => {
     const variables = {
         tweetsFirst: 10
     };
