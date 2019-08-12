@@ -7,13 +7,11 @@ import { getTweet } from "../../infra/twitter/getTweet";
 import { LikeTweet } from "./LikeTweet";
 
 type Props = {
-    readonly user: string;
     readonly tweet: Tweet;
 };
 
 type pageProps = {
-    readonly user: string;
-    match?: RouteComponentProps;
+    match: RouteComponentProps;
 };
 
 const _1MIN = 1000 * 60;
@@ -76,7 +74,7 @@ export const TweetDetailPage: React.SFC<pageProps> = props => {
         return () => {};
     }, []);
 
-    const tweetDetail = tweet ? <TweetEntry user={props.user} tweet={tweet} /> : null;
+    const tweetDetail = tweet ? <TweetEntry tweet={tweet} /> : null;
 
     return (
         <div className='TweetDetailPage'>

@@ -238,6 +238,9 @@ html, body {
         }
     }
     .TweetCreation {
+        &__tweet {
+            font-size: 40px;
+        }
         &__btn {
             font-size: 30px;
         }

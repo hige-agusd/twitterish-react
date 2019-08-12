@@ -53,7 +53,7 @@ export const Top: React.FunctionComponent<{}> = () => {
                 <Route path='/' exact render={() => <TweetList user={user} tweets={tweets} 
                     fetchData={fetchData} hasNextPage={pageInfo.hasNextPage} />} />
                 <Route path="/compose" component={TweetCreation} />
-                <Route path="/:id" render={() => <TweetDetailPage user={user}/>}/>
+                <Route path="/:id" component={TweetDetailPage} />
             </Switch>
         </Layout>
     );
